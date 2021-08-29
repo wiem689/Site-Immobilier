@@ -1,0 +1,132 @@
+  <!-- =======Intro Single ======= -->
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1>**************************************</h1><br/>
+            <h1 class="title-single">Our Amazing Real Estate <br/>  
+              <div class="input-group col-md-12" style="text-align: left">
+      
+                <span class="input-group-btn">
+                                                  <button  class="btn btn-outline-secondary" (click)="findReduction()" type="button" > Reduction
+          
+                                                  </button>
+                                              </span>
+              </div>
+
+              <div class="input-group col-md-12" style="text-align: left">
+      
+                <span class="input-group-btn">
+                                                  <button  class="btn btn-outline-secondary" (click)="findAugmentation()" type="button" > Augmentation
+          
+                                                  </button>
+                                              </span>
+              </div>
+
+              <div>
+              <div class="form-group"><br/>
+                <label for="file"><h5>File Upload :</h5></label><br/>     <h5>          <input type="file" #fileUpload id="fileUpload" name="fileUpload" height="10px" (click)="onClick()" multiple="multiple"> </h5> 
+                <span>{{fileName}}</span>
+              </div>
+              
+            </div></h1><br/>
+            <span class="color-text-a"><h2>our announcements</h2></span>
+          </div>
+        </div>
+        
+      </div>
+    </div> <br/>
+
+
+
+    <div class="input-group col-md-12" style="text-align: center">
+      <input type="text" class="search-query form-control" placeholder="Search With LocationOrComposition"  name="location" ngModel [(ngModel)]="location"/>
+      <span class="input-group-btn">
+                                        <button  class="btn btn-outline-secondary" (click)="findUserByEmailId()" type="button"> Search </button>
+                                    </span>
+    </div> <br/>
+
+
+    
+
+  <!-- ======= Agents Grid ======= -->
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      
+    <div   *ngFor="let ads of ListAds">
+    
+          <div class="card-box-d">
+            <div class="card-img-d">
+              <img src="assets/img/property-3.jpg" alt="" class="img-d img-fluid">
+            </div>
+            <div class="card-overlay card-overlay-hover">
+              <div class="card-header-d">
+                <div class="card-title-d align-self-center">
+                  <h3 class="title-d">
+                    {{ads.location}}
+                  </h3>
+                </div>
+              </div>
+              <div class="card-body-d">
+                <p class="content-d color-text-a">
+                  {{ads.composition}}
+                </p>
+                <div class="info-agents color-a">
+                  <p>
+                    <strong>Content: </strong> {{ads.content}}
+                  </p>
+                  <p>
+                    <strong>Price: </strong> {{ads.prix}}
+                  </p>
+                  <p>
+                    <strong>BaissePrix: </strong> {{ads.baissePrix}}
+                  </p>
+                  <p>
+                    <strong>HaussePrix: </strong> {{ads.haussePrix}}
+                  </p>
+                  <p>
+                    <strong>Area: </strong> {{ads.area}}
+                  </p>
+                  <button type="button" (click)="addfavorites(ads.id)" class="btn-primary"> Like </button>
+                  <button type="button" (click)="ajoutComments()" class="btn-primary"> Comments </button>
+                </div>
+              </div>
+            </div>
+              <div class="card-footer-d">
+                <div class="socials-footer d-flex justify-content-center">
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="bi bi-twitter" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#" class="link-one">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      </div>
+    
+    
+  
+  
